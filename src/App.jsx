@@ -79,7 +79,7 @@ const App = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.title} - {todo.completed ? "Completed" : "Incomplete"}
+            {todo.title} - {todo.isDone ? "Completed" : "Incomplete"}
             <button onClick={() => toggleTodo(todo.id)}>
               {todo.completed ? "Undo" : "Complete"}
             </button>
