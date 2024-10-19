@@ -10,7 +10,7 @@ const App = () => {
   const fetchTodos = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://54.169.64.10:3000/todos");
+      const response = await fetch("http://47.130.28.127:3000/todos");
       const data = await response.json();
       setTodos(data);
     } catch (error) {
@@ -23,7 +23,7 @@ const App = () => {
   // Add new todo
   const addTodo = async () => {
     try {
-      const response = await fetch("http://54.169.64.10:3000/todos", {
+      const response = await fetch("http://47.130.28.127:3000/todos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const App = () => {
   // Toggle todo completion
   const toggleTodo = async (id) => {
     try {
-      await fetch(`http://54.169.64.10:3000/todos/${id}/toggle`, {
+      await fetch(`http://47.130.28.127:3000/todos/${id}/toggle`, {
         method: "PATCH",
       });
       fetchTodos();
@@ -58,7 +58,7 @@ const App = () => {
   // Delete a todo
   const deleteTodo = async (id) => {
     try {
-      await fetch(`http://54.169.64.10:3000/todos/${id}`, {
+      await fetch(`http://47.130.28.127:3000/todos/${id}`, {
         method: "DELETE",
       });
       fetchTodos();
